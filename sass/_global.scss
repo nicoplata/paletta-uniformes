@@ -3,7 +3,16 @@
     padding: 0;
 }
 
+// FUENTES //
+
 @font-face {
-    font-family: $openSans;
+    font-family: 'opensans';
     src: url('/fonts/OpenSans-VariableFont.ttf') format('truetype');
 }
+
+//VARIABLES //
+
+$white: #FFFFFF;
+$black: #000000;
+$red: #ff0000;
+$font: 'opensans';
