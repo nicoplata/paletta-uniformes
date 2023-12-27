@@ -6,8 +6,7 @@
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-    background-color: $white;
-    box-shadow: 0px 0px 9px 0px $black;
+    transition: all 500ms;
 
     .logoContainer{
         width: 100px;
@@ -21,40 +20,88 @@
             max-height: 60px;
         }
     }
-    
-    .navContainer{
-        width: 100%;
-        height: 100%;
-        display: inherit;
-        justify-content: flex-end;
-        align-items: center;
-        margin-right: 10rem;
 
-        nav ul{
+    .openMenu{
+        width: 40px;
+        height: 40px;
+        margin-right: 2rem;
+        cursor: pointer;
+        transition: all 300ms;
+
+        span{
+            display: block;
+            width: 100%;
+            height: 4px;
+            background: $white;
+            border-radius: 5px;
+            margin-top: 6px;
+            transform-origin: 0px 100%;
+            transition: all 300ms;
+        }
+
+        .activeline1{
+            transform: rotate(45deg) translate(2px, -5px);
+        }
+        .activeline2{
+            opacity: 0;
+            margin-left: 30px;
+        }
+        .activeline3{
+            transform: rotate(-45deg) translate(2px, 9px);
+        }
+    }
+
+    .openMenu:hover{
+        background: rgba(255, 0, 0, 0.2);
+        padding: 10px;
+        border-radius: 50px;
+    }
+
+    #darkenBackground{
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        margin-top: 125px;
+        background: rgba(0,0,0,0.5);
+        display: none;
+        transition: all 300ms;
+    }
+
+    .navContainer{
+       position: fixed;
+       display: flex;
+       flex-flow: column nowrap;
+       width: 300px;
+       height: 100vh;
+       top: 0;
+       right: -300px;
+       background-color: $white;
+       margin-top: 124px;
+       z-index: 1;
+       transition: all 300ms;
+
+       .navDesktop ul{
             display: flex;
-            flex-flow: row nowrap;
-            gap: 3rem;
+            flex-flow: column nowrap;
             list-style: none;
-            
+            margin: 2rem 4rem;
+            gap: 2rem;
 
             a{
                 font-family: $font;
                 font-size: 1rem;
                 font-weight: 600;
-                color: $black;
+                color: $white;
                 text-decoration: none;
             }
         }
     }
 }
 
-@media (min-width: 768px ){
-    
-}
-
 @media (min-width: 1024px ) {
     .header{
-    
         .logoContainer{
             width: 100px;
             height: 100%;
@@ -67,29 +114,31 @@
                 max-height: 80px;
             }
         }
+
+        .openMenu{
+            display: none;
+        }
+
+        #darkenBackground{
+            display: none;
+        }
         
         .navContainer{
-            width: 100%;
+            position: unset;
             height: 100%;
             display: inherit;
-            justify-content: flex-end;
+            margin-top: 0;
+            justify-content: center;
             align-items: center;
             margin-right: 10rem;
-    
-            nav ul{
-                display: flex;
+            transition: none;
+            background-color: transparent;
+
+            .navDesktop ul{
                 flex-flow: row nowrap;
                 gap: 3rem;
-                list-style: none;
-                
-    
-                a{
-                    font-family: $font;
-                    font-size: 1rem;
-                    font-weight: 600;
-                    color: $black;
-                    text-decoration: none;
-                }
+                margin: 0;
+                align-items: center;
             }
         }
     }
