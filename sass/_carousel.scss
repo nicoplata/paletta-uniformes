@@ -2,9 +2,8 @@
     
     
     .carousel{
-        background: radial-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.90)), url('/img/paletta_2.jpg') no-repeat;
+        background: radial-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 1)), url('/img/paletta_2.jpg') no-repeat;
         background-size: cover;
-        width: 100%;
         height: 100vh;
         background-position: center;
     }
